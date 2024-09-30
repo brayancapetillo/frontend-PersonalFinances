@@ -41,5 +41,12 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# NX cache and workspace data
 .nx/cache
 .nx/workspace-data
+
+# Lock files
+yarn.lock
+
+# Other
+src/index.html
