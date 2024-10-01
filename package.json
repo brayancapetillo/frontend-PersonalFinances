@@ -49,6 +49,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.13",
     "typescript": "~5.4.2"
   }
 }
