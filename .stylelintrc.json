@@ -1,0 +1,121 @@
+{
+    "overrides": [
+        {
+            "files": [
+                "**/*.scss"
+            ],
+            "customSyntax": "postcss"
+        }
+    ],
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-recommended-scss"
+    ],
+    "rules": {
+        "no-empty-source": null,
+        "declaration-property-value-no-unknown": true,
+        "color-named": "never",
+        "declaration-no-important": true,
+        "declaration-property-unit-allowed-list": {
+            "font-size": [
+                "rem"
+            ],
+            "margin": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "padding": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "width": [
+                "px",
+                "rem",
+                "%",
+                "auto"
+            ],
+            "height": [
+                "px",
+                "rem",
+                "%",
+                "auto"
+            ],
+            "border-width": [
+                "px",
+                "rem"
+            ],
+            "max-width": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "min-width": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "max-height": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "min-height": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "flex-basis": [
+                "px",
+                "rem",
+                "%",
+                "auto"
+            ],
+            "gap": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "box-shadow": [
+                "px",
+                "rem",
+                "%"
+            ],
+            "transform": [
+                "px",
+                "%"
+            ],
+            "letter-spacing": [
+                "px",
+                "rem"
+            ],
+            "word-spacing": [
+                "px",
+                "rem"
+            ],
+            "animation-duration": [
+                "ms"
+            ]
+        },
+        "function-disallowed-list": [
+            "rgb",
+            "rgba",
+            "hsl",
+            "hsla",
+            "color",
+            "currentColor",
+            "transparent",
+            "inherit"
+        ],
+        "function-name-case": "lower",
+        "selector-type-case": "lower",
+        "value-keyword-case": "lower",
+        "selector-max-attribute": 2,
+        "selector-max-class": 2,
+        "selector-max-combinators": 2,
+        "selector-max-id": 1,
+        "selector-max-pseudo-class": 1,
+        "color-hex-length": "long"
+    }
+}

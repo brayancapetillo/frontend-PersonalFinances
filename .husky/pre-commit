@@ -1,2 +1,3 @@
 yarn lint:fix
+yarn lint:style:fix
 yarn lint-staged

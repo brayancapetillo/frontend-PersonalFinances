@@ -9,6 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
+    "lint:style": "stylelint `**/*.{css,scss}`",
+    "lint:style:fix": "stylelint `**/*.{css,scss}` --fix",
     "prepare": "husky install"
   },
   "private": true,
@@ -51,6 +53,8 @@
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "tailwindcss": "^3.4.13",
     "typescript": "~5.4.2"
   }
