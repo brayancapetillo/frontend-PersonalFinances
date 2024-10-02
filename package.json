@@ -9,6 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
+    "lint:style": "stylelint `**/*.{css,scss}`",
+    "lint:style:fix": "stylelint `**/*.{css,scss}` --fix",
     "prepare": "husky install"
   },
   "private": true,
