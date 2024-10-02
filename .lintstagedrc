@@ -4,5 +4,8 @@
   ],
   "**/*.html":[
     "eslint"
+  ],
+  "**/*.scss":[
+    "stylelint `**/*.{css,scss}`"
   ]
 }
