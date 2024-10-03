@@ -34,13 +34,15 @@
                 "px",
                 "rem",
                 "%",
-                "auto"
+                "auto",
+                "vw"
             ],
             "height": [
                 "px",
                 "rem",
                 "%",
-                "auto"
+                "auto",
+                "vh"
             ],
             "border-width": [
                 "px",
