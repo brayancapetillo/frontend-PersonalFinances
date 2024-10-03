@@ -1599,6 +1599,11 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.1.tgz"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
+"@fontsource/source-sans-pro@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/source-sans-pro/-/source-sans-pro-5.1.0.tgz#17f39585dcfe9726effae887d1200b2fa8b8861a"
+  integrity sha512-GJijHmnPKwA1G8MqUVOZzbIW8jLBFsJGugAb5/IikvTHHmLp+pJy+g8EhyWbfR8pI04i/EStzW0AzOv0KQEhzg==
+
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.13.0.tgz"
@@ -6097,6 +6102,13 @@ prettier@^3.3.3:
   version "3.3.3"
   resolved "https://registry.npmjs.org/prettier/-/prettier-3.3.3.tgz"
   integrity sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==
+
+primeng@^17.18.11:
+  version "17.18.11"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-17.18.11.tgz#8e5b1b921b303767611f31a356ee972e78ccc98e"
+  integrity sha512-LzV0fFZmb3GdnaRqi1+GP+RPtW0a+jztL5pH1zRWY7+7pyQ0n1YNyTXzmqVcdks/CmoyjNhutWEmexwi6vFVeA==
+  dependencies:
+    tslib "^2.3.0"
 
 proc-log@^3.0.0:
   version "3.0.0"
