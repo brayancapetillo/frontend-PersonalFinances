@@ -1,1 +1,66 @@
-<p>login works!</p>
+<section class="signin">
+	<ngx-particles id="tsparticles" [options]="particlesOptions" [particlesInit]="particlesInit"></ngx-particles>
+	<div class="signin__circle"></div>
+
+	<div class="signin__content">
+		<div id="container-3d-login" class="signin__content-left"><app-model3d /></div>
+		<div class="signin__content-right">
+			<div class="signin__form-container">
+				<h1 class="signin__title">Welcome Back</h1>
+				<h2 class="signin__subtitle">Login to your account</h2>
+
+				<form class="signin__form">
+					<div class="signin__form-group signin__form-group--username">
+						<div class="signin__input-icon">
+							<div class="signin__icon">
+								<fa-icon [icon]="['far', 'user']"></fa-icon>
+							</div>
+							<div class="signin__input">
+								<input pInputText id="username" placeholder="Username" class="signin__input-field" />
+							</div>
+						</div>
+					</div>
+
+					<div class="signin__form-group signin__form-group--password">
+						<div class="signin__input-icon">
+							<div class="signin__icon">
+								<fa-icon [icon]="['fas', 'lock']"></fa-icon>
+							</div>
+							<div class="signin__input">
+								<p-password inputId="password" [toggleMask]="true" [feedback]="false" placeholder="password" class="signin__input"></p-password>
+							</div>
+						</div>
+					</div>
+
+					<div class="signin__forgot">
+						<div class="signin__remember"><app-checkbox /><span class="signin__remember signin__remember-text">Remember me</span></div>
+						<a href="#" class="signin__forgot-link">Forgot password?</a>
+					</div>
+					<p-button type="Submit" class="signin__submit" label="Submit" />
+				</form>
+
+				<div class="signin__social">
+					<div class="signin__social-separator">
+						<div class="signin__social-bar"></div>
+						<div class="signin__social-text">OR</div>
+						<div class="signin__social-bar"></div>
+					</div>
+					<div class="signin__social-body">
+						<button class="signin__social-button signin__social-button--facebook">
+							<fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+						</button>
+						<button class="signin__social-button signin__social-button--google">
+							<fa-icon class="" [icon]="['fab', 'google']"></fa-icon>
+						</button>
+						<button class="signin__social-button signin__social-button--github">
+							<fa-icon [icon]="['fab', 'github']"></fa-icon>
+						</button>
+					</div>
+
+					<div class="signin__signup">Don't have an account yet? <a href="#" class="signin__signup-link">Sign Up</a></div>
+				</div>
+			</div>
+			<div class="signin__content-signup"></div>
+		</div>
+	</div>
+</section>
