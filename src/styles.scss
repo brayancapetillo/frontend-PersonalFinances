@@ -1,5 +1,109 @@
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable declaration-property-value-no-unknown */
+/* stylelint-disable selector-class-pattern */
 /* stylelint-disable scss/at-rule-no-unknown */
 
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	/* primary */
+	--color-primary-50: #fefaec;
+	--color-primary-100: #faf2cb;
+	--color-primary-200: #f7e38a;
+	--color-primary-300: #f1d46c;
+	--color-primary-400: #eec55b;
+	--color-primary-500: #be9b49;
+	--color-primary-600: #a28240;
+	--color-primary-700: #896e36;
+	--color-primary-800: #66502d;
+	--color-primary-900: #58442b;
+	--color-primary-950: #261f0e;
+
+	/* info */
+	--color-success: #0bd18a;
+	--color-warning: #f68b34;
+	--color-danger: #fc6161;
+	--color-info: #2fbcfb;
+	--color-help: #9243f4;
+
+	/* text */
+	--my-text-color: #232323;
+	--my-text-color-secondary: #989a9e;
+	--my-highlight-text-color: var(--color-primary-400);
+
+	/* background */
+	--my-surface-ground: #f0f0f2;
+	--my-surface-section: #f0f0f2;
+	--my-surface-card: #f0f0f2;
+	--my-surface-overlay: #f0f0f2;
+	--my-surface-border: #e8eaf0;
+	--my-surface-hover: #f0f0f2;
+	--my-maskbg: #00000066;
+	--my-highlight-bg: #f0f0f2;
+
+	/* shadows */
+	--shadow-color: #ffffff;
+	--shadow-color-inset: #aeaec066;
+
+	.dark {
+		/* text */
+		--my-text-color: #ffffff;
+		--my-text-color-secondary: #5d657b;
+
+		/* background */
+		--my-surface-ground: #161616;
+		--my-surface-section: #1a1a1a;
+		--my-surface-card: #1a1a1a;
+		--my-surface-overlay: #1a1a1a;
+		--my-surface-border: #1a1a1a;
+		--my-surface-hover: #161616;
+		--my-maskbg: #00000066;
+		--my-highlight-bg: #161616;
+		--highlight-text-color: var(--color-primary-400);
+
+		/* shadows */
+		--shadow-color: #272727;
+		--shadow-color-inset: #0a0a0a;
+	}
+
+	body {
+		margin: 0;
+		min-height: 100%;
+		overflow: hidden auto;
+		background-color: var(--my-surface-ground);
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 400;
+		color: var(--my-text-color);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	::-webkit-scrollbar {
+		@apply h-4 w-4;
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-primary_;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply rounded-lg border-4 border-solid border-white bg-slate-300;
+	}
+
+	.dark ::-webkit-scrollbar-track {
+		@apply bg-gray-800;
+	}
+
+	.dark ::-webkit-scrollbar-thumb {
+		@apply border-4 border-solid border-gray-800 bg-slate-600;
+	}
+}
+
+@layer utilities {
+	.bg-primary_ {
+		background-color: theme('colors.primary.50');
+	}
+}
