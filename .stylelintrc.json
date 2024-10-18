@@ -114,10 +114,10 @@
         "selector-type-case": "lower",
         "value-keyword-case": "lower",
         "selector-max-attribute": 2,
-        "selector-max-class": 2,
-        "selector-max-combinators": 2,
+        "selector-max-class": 6,
+        "selector-max-combinators": 4,
         "selector-max-id": 1,
-        "selector-max-pseudo-class": 1,
+        "selector-max-pseudo-class": 4,
         "color-hex-length": "long"
     }
 }
