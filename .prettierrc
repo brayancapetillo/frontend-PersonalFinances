@@ -10,5 +10,8 @@
 	"singleQuote": true,
 	"trailingComma": "none",
 	"useTabs": true,
-	"endOfLine": "auto"
+	"endOfLine": "auto",
+	"plugins": [
+		"prettier-plugin-tailwindcss"
+	]
 }
