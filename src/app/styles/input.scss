@@ -26,7 +26,7 @@
 
 /* input text */
 .p-inputtext {
-	@apply m-0 rounded-md border-2 border-surface-border bg-surface-section px-3 py-2 text-base text-base-color-secundary shadow-np-input-sm outline-0 transition-all duration-300;
+	@apply m-0 w-full rounded-md border-2 border-surface-border bg-surface-section px-3 py-2 text-base text-base-color-secundary shadow-np-input-sm outline-0 transition-all duration-300;
 
 	&:enabled:hover {
 		@apply shadow-np-input-sm-hover;
@@ -40,10 +40,6 @@
 /* input password */
 .p-password {
 	@apply w-full;
-}
-
-.p-password-input {
-	@apply flex-auto rounded-bl-none rounded-tl-none;
 }
 
 /* password panel */
