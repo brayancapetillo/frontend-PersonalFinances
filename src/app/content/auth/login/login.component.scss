@@ -3,20 +3,24 @@
 }
 
 .signin {
-	@apply container mx-auto flex h-dvh w-dvw items-center justify-center;
+	@apply container relative mx-auto flex h-dvh w-dvw items-center justify-center;
+
+	&__switch-theme {
+		@apply absolute right-4 top-4;
+	}
 
 	&__circle {
 		background: radial-gradient(closest-side, var(--surface-section), transparent);
 		left: calc(50% - 600px);
 
-		@apply absolute -top-[850px] h-[1200px] w-[1200px];
+		@apply absolute -top-[850px] h-[1200px] w-[1200px] max-lg:hidden;
 	}
 
 	&__content {
-		@apply flex w-full items-stretch justify-between gap-8 rounded-md bg-surface-section p-8 shadow-np-3xl backdrop-blur-sm;
+		@apply flex w-full items-stretch justify-between gap-8 rounded-md bg-surface-section p-8 shadow-np-3xl backdrop-blur-sm transition duration-300;
 
 		&-left {
-			@apply flex-grow relative flex w-full;
+			@apply relative flex w-full flex-grow max-lg:hidden;
 		}
 
 		&-right {
@@ -25,7 +29,7 @@
 	}
 
 	&__form-container {
-		@apply m-auto flex w-3/4 flex-col;
+		@apply m-auto flex w-3/4 flex-col max-sm:w-full;
 	}
 
 	&__title {
@@ -49,7 +53,7 @@
 	}
 
 	&__icon {
-		@apply grid w-10 min-w-10 place-items-center rounded-bl-md rounded-tl-md border-b-2 border-l-2 border-t-2 border-surface-border bg-surface-section text-base-color-secundary shadow-np-input-sm;
+		@apply grid w-10 min-w-10 place-items-center rounded-bl-md rounded-tl-md border-b-2 border-l-2 border-t-2 border-surface-border bg-surface-section text-base-color-secundary shadow-np-input-sm transition-all duration-300;
 	}
 
 	&__input {
@@ -77,7 +81,7 @@
 	}
 
 	&__submit {
-		@apply mt-10 flex;
+		@apply mt-10;
 	}
 
 	&__social {
@@ -88,7 +92,7 @@
 		}
 
 		&-bar {
-			@apply h-0.5 w-full bg-surface-border;
+			@apply h-0.5 w-full bg-surface-border transition-all duration-300;
 		}
 
 		&-text {
@@ -124,39 +128,3 @@
 		}
 	}
 }
-
-/* .login {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-
-	/* .circle {
-		width: 1200px;
-		height: 1200px;
-		background: radial-gradient(closest-side, var(--surface-section), transparent);
-		left: calc(50% - 600px);
-		position: absolute;
-		top: -850px;
-	} */
-
-/* content login */
-
-/* &__content {
-		@apply flex container mx-auto w-full pb-10 pl-12 pr-12 pt-10 relative h-full items-center;
-
-		&__body {
-			@apply flex justify-between w-full gap-8 rounded-md p-4 bg-surface-section shadow-xl3;
-
-			&__left {
-				@apply w-full flex justify-center items-center relative;
-			}
-
-			&__right {
-				@apply w-full;
-			}
-		}
-	} 
-} */
