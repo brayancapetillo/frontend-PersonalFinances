@@ -1,0 +1,31 @@
+<ng-container *ngIf="Check; else switch">
+	<label class="container-test">
+		<div class="toggle-mode">
+			<input (change)="switchTheme()" [(ngModel)]="darkTheme" type="checkbox" class="toggle-mode__checkbox" />
+			<div class="toggle-mode__indicator">
+				<span class="toggle-mode__icon toggle-mode__icon--sun">
+					<fa-icon [icon]="['fas', 'sun']"></fa-icon>
+				</span>
+				<span class="toggle-mode__icon toggle-mode__icon--moon">
+					<fa-icon [icon]="['fas', 'moon']"></fa-icon>
+				</span>
+			</div>
+		</div>
+	</label>
+</ng-container>
+
+<ng-template #switch>
+	<label>
+		<div class="check-theme">
+			<input (change)="switchTheme()" [(ngModel)]="darkTheme" type="checkbox" class="check-theme__checkbox" />
+			<div class="check-theme__bubble">
+				<span class="check-theme__icon check-theme__icon--sun">
+					<fa-icon [icon]="['fas', 'sun']"></fa-icon>
+				</span>
+				<span class="check-theme__icon check-theme__icon--moon">
+					<fa-icon [icon]="['fas', 'moon']"></fa-icon>
+				</span>
+			</div>
+		</div>
+	</label>
+</ng-template>

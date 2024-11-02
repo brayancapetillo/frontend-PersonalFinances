@@ -1,0 +1,71 @@
+.toggle-mode {
+	@apply relative h-10 w-20 cursor-pointer overflow-hidden rounded-full p-1 shadow-np-input-sm-focus;
+
+	&__checkbox {
+		@apply absolute inset-0 hidden;
+	}
+
+	&__indicator {
+		@apply absolute left-1 grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-surface-section shadow-np-3xl transition-all duration-300;
+	}
+
+	&__checkbox:checked ~ &__indicator {
+		@apply translate-x-10;
+	}
+
+	&__icon {
+		@apply absolute transition-all duration-300;
+
+		&--sun {
+			@apply top-1 text-primary-400;
+		}
+
+		&--moon {
+			@apply top-8 text-indigo-800;
+		}
+	}
+
+	&__checkbox:checked ~ &__indicator &__icon {
+		&--moon {
+			@apply top-1;
+		}
+
+		&--sun {
+			@apply -top-8;
+		}
+	}
+}
+
+.check-theme {
+	@apply grid;
+
+	&__checkbox {
+		@apply absolute inset-0 hidden;
+	}
+
+	&__bubble {
+		@apply relative grid h-10 w-10 cursor-pointer place-items-center rounded-lg transition-all duration-300;
+	}
+
+	&__icon {
+		@apply absolute grid h-8 w-8 place-items-center transition-all duration-300;
+
+		&--sun {
+			@apply scale-125 text-primary-400;
+		}
+
+		&--moon {
+			@apply scale-0 text-indigo-800;
+		}
+	}
+
+	&__checkbox:checked ~ &__bubble &__icon {
+		&--moon {
+			@apply -rotate-[360deg] scale-125;
+		}
+
+		&--sun {
+			@apply -rotate-[360deg] scale-0;
+		}
+	}
+}
