@@ -17,6 +17,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { CheckboxComponent } from '../../../shared/components/input/checkbox/checkbox.component'
+import { SwitchModeComponent } from '../../../shared/components/layout/switch-mode/switch-mode.component'
 
 @Component({
 	selector: 'app-login',
@@ -31,7 +32,8 @@ import { CheckboxComponent } from '../../../shared/components/input/checkbox/che
 		InputGroupAddonModule,
 		FontAwesomeModule,
 		CheckboxComponent,
-		ButtonModule
+		ButtonModule,
+		SwitchModeComponent
 	],
 	templateUrl: './login.component.html',
 	styleUrl: './login.component.scss'

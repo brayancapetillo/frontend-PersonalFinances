@@ -1,8 +1,8 @@
 <section class="signin">
 	<ngx-particles id="tsparticles" [options]="particlesOptions" [particlesInit]="particlesInit"></ngx-particles>
 	<div class="signin__circle"></div>
-
 	<div class="signin__content">
+		<div class="signin__switch-theme"><app-switch-mode [Check]="false" /></div>
 		<div id="container-3d-login" class="signin__content-left"><app-model3d /></div>
 		<div class="signin__content-right">
 			<div class="signin__form-container">
@@ -36,7 +36,7 @@
 						<div class="signin__remember"><app-checkbox /><span class="signin__remember signin__remember-text">Remember me</span></div>
 						<a href="#" class="signin__forgot-link">Forgot password?</a>
 					</div>
-					<p-button type="Submit" class="signin__submit" label="Submit" />
+					<button class="mp-button signin__submit">Submit</button>
 				</form>
 
 				<div class="signin__social">
