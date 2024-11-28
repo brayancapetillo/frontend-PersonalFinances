@@ -6,7 +6,7 @@
 	@apply container relative mx-auto flex h-dvh w-dvw items-center justify-center;
 
 	&__switch-theme {
-		@apply absolute right-4 top-4;
+		@apply absolute right-4 top-4 z-10;
 	}
 
 	&__circle {
@@ -17,19 +17,27 @@
 	}
 
 	&__content {
-		@apply flex w-full items-stretch justify-between gap-8 rounded-md bg-surface-section p-8 shadow-np-3xl backdrop-blur-sm transition duration-300;
+		@apply flex w-full items-stretch justify-between gap-8 overflow-hidden rounded-md bg-surface-section p-8 shadow-np-3xl backdrop-blur-sm transition duration-300;
 
 		&-left {
-			@apply relative flex w-full flex-grow max-lg:hidden;
+			@apply relative flex w-full min-w-[450px] flex-grow max-lg:hidden;
 		}
 
 		&-right {
-			@apply w-full;
+			@apply relative flex h-[600px] w-full transition-all duration-300;
+
+			&.active {
+				@apply h-[670px];
+			}
 		}
 	}
 
 	&__form-container {
-		@apply m-auto flex w-3/4 flex-col max-sm:w-full;
+		@apply m-auto flex w-3/4 flex-col transition-all duration-300 max-sm:w-full;
+
+		&.active {
+			@apply -translate-y-[800px];
+		}
 	}
 
 	&__title {
@@ -117,6 +125,14 @@
 			&--github {
 				@apply text-gray-500;
 			}
+		}
+	}
+
+	&__form-signup {
+		@apply absolute left-[12.5%] m-auto flex w-3/4 translate-y-[800px] flex-col transition-all duration-300 max-sm:left-0 max-sm:w-full;
+
+		&.active {
+			@apply translate-y-0;
 		}
 	}
 
