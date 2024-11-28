@@ -4,6 +4,7 @@
 /* stylelint-disable scss/at-rule-no-unknown */
 
 /* You can add global styles to this file, and also import other style files */
+@import './app/styles/primeng/toast';
 @import './app/styles/button';
 @import './app/styles/input';
 @import '@fontsource/source-sans-pro';
@@ -28,7 +29,7 @@
 	/* info */
 	--color-success: #0bd18a;
 	--color-warning: #f68b34;
-	--color-danger: #fc6161;
+	--color-danger: #ff8787;
 	--color-info: #2fbcfb;
 	--color-help: #9243f4;
 
