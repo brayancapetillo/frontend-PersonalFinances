@@ -10,6 +10,10 @@ export class ToastMessageService {
 
 	constructor() {}
 
+	public add(severity: typeToastMessage, summary: string, detail: string) {
+		this.messagePNG.add({ severity, summary, detail, life: 3000 })
+	}
+
 	public addAll(severity: typeToastMessage, summary: string, detail: string): void {
 		this.messagePNG.addAll([{ severity, summary, detail }])
 	}
