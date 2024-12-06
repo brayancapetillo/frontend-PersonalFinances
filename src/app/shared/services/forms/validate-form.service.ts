@@ -1,13 +1,13 @@
+// - Angular Imports
 import { inject, Injectable } from '@angular/core'
-import { ToastMessageService } from '../messageService/toast-message.service'
-import { typeToastMessage } from '../../../shared/types/toastMessage/toastMessage'
 import { FormControl } from '@angular/forms'
-import { ErrorMessages } from '../../../shared/types/forms/errorControl'
 
-interface ErrorDetails {
-	title: string
-	errors: Record<string, string>
-}
+// - Interface's and Type's Imports
+import { controlSelector, ErrorDetails, ErrorMessages } from '@shared/types/forms/errorControl'
+import { typeToastMessage } from '@shared/types/toastMessage/toastMessage'
+
+// - Service's Imports
+import { ToastMessageService } from '@core/services/messageService/toast-message.service'
 
 @Injectable({
 	providedIn: 'root'
@@ -42,10 +42,11 @@ export class ValidateFormService {
 		}
 	}
 
-	public notifyErrorFormControl(severity: typeToastMessage, control: FormControl, messageControl: ErrorDetails): void {
+	public notifyErrorFormControl(severity: typeToastMessage, control: FormControl, controlSelector: controlSelector): void {
 		if (control.errors) {
 			Object.keys(control.errors).some((key: string) => {
-				if (messageControl.errors[key]) {
+				if (this.errorMessage[controlSelector].errors[key]) {
+					const messageControl: ErrorDetails = this.errorMessage[controlSelector]
 					this.messagePNG.addAll(severity, messageControl.title, messageControl.errors[key])
 					return true
 				}
