@@ -1,6 +1,7 @@
+// - Forms Angular Imports
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms'
 
-const patternPassword: RegExp = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&^#_+=~-])[A-Za-z\\d@$!%*?&^#_+=~-]{8,}$')
+const patternPassword: RegExp = new RegExp('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&^#_+=~.-])[A-Za-z\\d@$!%*?&^#_+=~.-]{8,}$')
 
 export const passwordValidator = (control: AbstractControl): ValidationErrors | null => {
 	const value = control.value
