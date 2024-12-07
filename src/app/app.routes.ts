@@ -1,4 +1,9 @@
 import { Routes } from '@angular/router'
-import { LoginComponent } from './content/auth/login/login.component'
+import { DashboardComponent } from '@content/components/dashboard/dashboard.component'
+import { tokenGuard } from '@core/guards/token.guard'
 
-export const routes: Routes = [{ path: 'login', component: LoginComponent }]
+export const routes: Routes = [
+	{ path: 'auth', loadChildren: () => import('./routes/auth/auth.routes') },
+	{ path: 'dashboard', component: DashboardComponent, canActivate: [tokenGuard] },
+	{ path: '**', redirectTo: 'auth' }
+]

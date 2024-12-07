@@ -6,14 +6,14 @@
 	}
 
 	.checkmark-p {
-		@apply relative left-0 top-0 h-5 w-5 rounded border-primary-100 bg-surface-section shadow-np-input-sm;
+		@apply relative left-0 top-0 h-5 w-5 rounded border-primary-100 bg-surface-section shadow-np-input-sm transition-all duration-300;
 
 		&::after {
 			@apply absolute hidden content-[''];
 		}
 
 		&::before {
-			@apply shadow-check absolute left-1.5 top-0.5 h-3 w-2 rotate-45 rounded-sm border-b-[3px] border-l-0 border-r-[3px] border-t-0 border-primary-400 content-[''];
+			@apply absolute left-1.5 top-0.5 h-3 w-2 rotate-45 rounded-sm border-b-[3px] border-l-0 border-r-[3px] border-t-0 border-primary-400 shadow-check content-[''];
 		}
 	}
 
@@ -22,6 +22,6 @@
 	}
 
 	input:not(:checked) ~ .checkmark-p {
-		@apply animate-wipe-down;
+		@apply translate-y-12;
 	}
 }

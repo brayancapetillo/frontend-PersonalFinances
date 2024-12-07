@@ -19,6 +19,12 @@ export class Model3dComponent implements OnInit {
 	private mixer!: THREE.AnimationMixer
 	private clock = new THREE.Clock()
 	private controls!: OrbitControls
+	private model!: THREE.Object3D
+	private rotateForward = true // Variable para controlar la dirección de la rotación
+	private maxRotation = 0 // Límite máximo de rotación (aproximadamente 22.5 grados)
+	private minRotation = -1.8
+	private scale: number = 1.25
+	private referenceScale: number = 0.0016
 
 	ngOnInit(): void {
 		this.initThree()
@@ -34,8 +40,8 @@ export class Model3dComponent implements OnInit {
 
 		this.scene = new THREE.Scene()
 
-		this.camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 2000)
-		this.camera.position.z = 25
+		this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000)
+		this.camera.position.z = 10
 
 		this.renderer = new THREE.WebGLRenderer({
 			canvas: canvas,
@@ -50,13 +56,13 @@ export class Model3dComponent implements OnInit {
 		this.scene.add(directionalLight)
 
 		this.renderer.setSize(canvas.offsetWidth, canvas.offsetHeight)
-		this.loader.load('../../../../assets/animations/3d/treasure-island.glb', (gltf) => {
-			const model = gltf.scene
-
-			// model.position.y = -10
-			// model.position.y = 0.5
-			// model.position.set(0, -10, 0)
-			model.scale.set(0.1, 0.1, 0.1)
+		this.loader.load('../../../../assets/animations/3d/low_poly_foliage_test.glb', (gltf) => {
+			this.model = gltf.scene
+			this.model.position.set(0, -2, 0) // Ajusta la posición del modelo
+			this.model.rotation.z = -0.1
+			this.model.rotation.x = 0
+			this.model.rotation.y = -2
+			this.model.scale.set(this.scale, this.scale, this.scale)
 			// model.traverse((child) => {
 			// 	if (child instanceof THREE.Mesh) {
 			// 		child.material = new THREE.MeshStandardMaterial({
@@ -66,10 +72,10 @@ export class Model3dComponent implements OnInit {
 			// 		})
 			// 	}
 			// })
-			this.scene.add(model)
+			this.scene.add(this.model)
 
 			if (gltf.animations && gltf.animations.length > 0) {
-				this.mixer = new THREE.AnimationMixer(model)
+				this.mixer = new THREE.AnimationMixer(this.model)
 				this.mixer.clipAction(gltf.animations[0]).play()
 			}
 		})
@@ -95,6 +101,10 @@ export class Model3dComponent implements OnInit {
 			this.mixer.update(delta)
 		}
 
+		if (this.model) {
+			this.model.rotation.y += delta * 0.3
+		}
+
 		this.controls.update()
 
 		this.renderer.render(this.scene, this.camera)
@@ -102,10 +112,15 @@ export class Model3dComponent implements OnInit {
 
 	private setSize(): void {
 		const container = document.getElementById('container-3d-login') as HTMLDivElement
-		if (!container) {
-			return
-		}
+		if (!container) return
 
+		const scaleResize: number = container.offsetWidth * this.referenceScale
+		const positiony: number = -1 * scaleResize
+
+		if (this.model) {
+			this.model.scale.set(scaleResize, scaleResize, scaleResize)
+			this.model.position.set(0, positiony, 0) // Ajusta la posición del modelo
+		}
 		this.renderer.setSize(container.offsetWidth, container.offsetHeight)
 		this.camera.aspect = container.offsetWidth / container.offsetHeight
 		this.camera.updateProjectionMatrix()

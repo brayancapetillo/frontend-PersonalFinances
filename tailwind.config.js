@@ -49,6 +49,9 @@ module.exports = {
 					'-0.25rem -0.25rem 0.5rem 0 var(--shadow-color), 0.25rem 0.25rem 0.5rem 0 var(--shadow-color-inset), 0.25rem 0.25rem 0.5rem 0 var(--shadow-color-inset) inset, -0.25rem -0.25rem 0.5rem 0 var(--shadow-color) inset;',
 				check: '0.125rem 0.25rem 0.25rem var(--shadow-color-inset)'
 			},
+			dropShadow:{
+				'np-2xl':'0.75rem 0.75rem 0.5rem var(--shadow-color-inset)'
+			},
 			keyframes: {
 				'wipe-down': {
 					'0%': { transform: 'translateY(0)' },
