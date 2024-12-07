@@ -1,0 +1,27 @@
+.container-cbox {
+	@apply relative block w-fit cursor-pointer select-none overflow-hidden rounded-md border-2 border-surface-border shadow-np-input-sm transition-all duration-300 hover:shadow-np-input-sm-hover;
+
+	input {
+		@apply absolute flex h-0 w-0 cursor-pointer justify-center align-middle opacity-0;
+	}
+
+	.checkmark-p {
+		@apply relative left-0 top-0 h-5 w-5 rounded border-primary-100 bg-surface-section shadow-np-input-sm transition-all duration-300;
+
+		&::after {
+			@apply absolute hidden content-[''];
+		}
+
+		&::before {
+			@apply absolute left-1.5 top-0.5 h-3 w-2 rotate-45 rounded-sm border-b-[3px] border-l-0 border-r-[3px] border-t-0 border-primary-400 shadow-check content-[''];
+		}
+	}
+
+	input:checked ~ .checkmark-p {
+		@apply animate-wipe-up shadow-np-input-sm-focus;
+	}
+
+	input:not(:checked) ~ .checkmark-p {
+		@apply translate-y-12;
+	}
+}
