@@ -41,18 +41,18 @@
 	--my-highlight-text-color: var(--color-primary-400);
 
 	/* background */
-	--my-surface-ground: #f0f0f2;
-	--my-surface-section: #f0f0f2;
-	--my-surface-card: #f0f0f2;
-	--my-surface-overlay: #f0f0f2;
+	--my-surface-ground: #e3e9f7;
+	--my-surface-section: #e3e9f7;
+	--my-surface-card: #e3e9f7;
+	--my-surface-overlay: #e3e9f7;
 	--my-surface-border: #e8eaf0;
-	--my-surface-hover: #f0f0f2;
+	--my-surface-hover: #e3e9f7;
 	--my-maskbg: #00000066;
-	--my-highlight-bg: #f0f0f2;
+	--my-highlight-bg: #e3e9f7;
 
 	/* shadows */
-	--shadow-color: #ffffff;
-	--shadow-color-inset: #aeaec066;
+	--shadow-color: #f2f6ff;
+	--shadow-color-inset: #d1d8eb;
 
 	.dark {
 		/* text */
@@ -98,6 +98,10 @@
 
 	h3 {
 		@apply text-2xl font-semibold text-primary-950;
+	}
+
+	h4 {
+		@apply text-xl font-semibold text-primary-950;
 	}
 
 	::-webkit-scrollbar {
