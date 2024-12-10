@@ -37,8 +37,8 @@ export class UserService {
 
 	public async setUserByToken(tokens: tokenSummary): Promise<void> {
 		try {
-			this.cookieService.set('token', tokens.accessToken)
-			this.cookieService.set('refreshToken', tokens.refreshToken)
+			this.cookieService.set('token', tokens.accessToken, { path: '/' })
+			this.cookieService.set('refreshToken', tokens.refreshToken, { path: '/' })
 
 			const decodeToken = jwtDecode(tokens.accessToken) as signInSummary
 			const { id, name } = decodeToken
