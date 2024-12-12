@@ -39,6 +39,8 @@ module.exports = {
 				'highlight-color': 'var(--my-highlight-text-color)'
 			},
 			boxShadow: {
+				'np-xl':
+					'-0.5rem -0.5rem 1.25rem 0 var(--shadow-color),0.5rem 0.5rem 1.25rem 0 var(--shadow-color-inset),inset -0.125rem -0.125rem 0.125rem 0 var(--shadow-color-inset),inset 0.125rem 0.125rem 0.125rem var(--shadow-color)',
 				'np-2xl':
 					'-0.75rem -0.75rem 1.5rem 0 var(--shadow-color),0.75rem 0.75rem 1.5rem 0 var(--shadow-color-inset),inset -0.125rem -0.125rem 0.25rem 0 var(--shadow-color-inset),inset 0.125rem 0.125rem 0.25rem var(--shadow-color)',
 				'np-3xl':
