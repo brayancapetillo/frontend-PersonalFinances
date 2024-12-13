@@ -1,4 +1,4 @@
-<ng-container *ngIf="Check; else switch">
+@if (Check) {
 	<label class="container-test">
 		<div class="toggle-mode">
 			<input (change)="switchTheme()" [(ngModel)]="darkTheme" type="checkbox" class="toggle-mode__checkbox" />
@@ -12,9 +12,7 @@
 			</div>
 		</div>
 	</label>
-</ng-container>
-
-<ng-template #switch>
+} @else {
 	<label>
 		<div class="check-theme">
 			<input (change)="switchTheme()" [(ngModel)]="darkTheme" type="checkbox" class="check-theme__checkbox" />
@@ -28,4 +26,4 @@
 			</div>
 		</div>
 	</label>
-</ng-template>
+}
