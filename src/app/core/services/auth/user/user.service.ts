@@ -6,6 +6,9 @@ import { BehaviorSubject, Observable } from 'rxjs'
 import { tokenSummary } from '@shared/interfaces/dtos/auth/tokenSumary.dto'
 import { signInSummary } from '@shared/interfaces/dtos/auth/signIn.dto'
 
+// - Constant's Imports
+import { cookies } from '@shared/constants/cookies/cookies'
+
 // - Service's Imports
 import { CookieService } from 'ngx-cookie-service'
 
@@ -17,8 +20,8 @@ import { jwtDecode } from 'jwt-decode'
 })
 export class UserService {
 	private readonly cookieService: CookieService = inject(CookieService)
-	private readonly token: string = this.cookieService.get('token')
-	private readonly refreshToken: string = this.cookieService.get('refreshToken')
+	private readonly token: string = this.cookieService.get(cookies.token)
+	private readonly refreshToken: string = this.cookieService.get(cookies.refreshToken)
 
 	private $dataUser: BehaviorSubject<signInSummary> = new BehaviorSubject<signInSummary>({ id: 0, name: '' })
 	constructor() {
@@ -37,8 +40,8 @@ export class UserService {
 
 	public async setUserByToken(tokens: tokenSummary): Promise<void> {
 		try {
-			this.cookieService.set('token', tokens.accessToken, { path: '/' })
-			this.cookieService.set('refreshToken', tokens.refreshToken, { path: '/' })
+			this.cookieService.set(cookies.token, tokens.accessToken, { path: '/' })
+			this.cookieService.set(cookies.refreshToken, tokens.refreshToken, { path: '/' })
 
 			const decodeToken = jwtDecode(tokens.accessToken) as signInSummary
 			const { id, name } = decodeToken
