@@ -1,0 +1,90 @@
+<aside [ngClass]="{ '!w-24': isToggleBar }" class="flex h-dvh w-72 flex-col bg-surface-ground px-8 py-4 shadow-np-3xl transition-all duration-300">
+	<div class="flex items-center gap-4">
+		<img class="w-8" src="/assets/images/logo.png" alt="" />
+		<div
+			[ngClass]="{ '-translate-x-6 scale-x-0 opacity-0': isToggleBar }"
+			class="mt-1 flex origin-left text-xl font-semibold text-primary-400 transition-all duration-300"
+		>
+			Personal<span class="font-normal text-base-color-secundary">Finances</span>
+		</div>
+	</div>
+
+	<nav class="mt-8 flex h-full">
+		<ul class="flex w-full flex-col gap-4">
+			@for (item of routesApp; track $index) {
+				<li>
+					<a [routerLink]="[item.routeLink]" class="group relative flex w-full cursor-pointer bg-surface-ground py-2 transition-all duration-300">
+						<div class="flex items-center gap-4">
+							<div
+								class="flex h-8 w-8 items-center justify-center rounded shadow-np-input-sm transition-all duration-300 group-hover:shadow-np-input-sm-focus"
+								routerLinkActive="shadow-np-input-sm-focus"
+							>
+								<fa-icon
+									class="flex text-base-color-secundary transition-all duration-300 group-hover:text-primary-400"
+									routerLinkActive="text-primary-400"
+									[icon]="item.icon"
+								></fa-icon>
+							</div>
+							<div
+								[ngClass]="{ '-translate-x-6 scale-x-0 opacity-0': isToggleBar }"
+								class="flex origin-left font-semibold capitalize text-base-color-secundary transition-all duration-300 group-hover:text-primary-400"
+								routerLinkActive="text-primary-400"
+							>
+								{{ item.name }}
+							</div>
+						</div>
+						@if (isToggleBar) {
+							<span
+								routerLinkActive="text-primary-400"
+								class="absolute top-1/4 ml-20 origin-left -translate-x-12 scale-0 rounded bg-surface-ground px-2 py-0.5 font-semibold capitalize text-base-color-secundary opacity-0 shadow-np-2xl transition-all duration-300 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"
+								>{{ item.name }}</span
+							>
+						}
+					</a>
+				</li>
+			}
+		</ul>
+	</nav>
+
+	<div class="relative flex h-fit w-full flex-col items-center justify-center">
+		<div
+			[ngClass]="{ '-mb-16 !h-14 !w-14': isToggleBar }"
+			class="flex h-28 w-28 origin-left overflow-hidden rounded-full border-4 border-surface-border shadow-np-3xl transition-all duration-300"
+		>
+			<img class="w-full rounded-full" src="/assets/images/avatar.png" alt="" />
+		</div>
+		<div
+			[ngClass]="{ '-translate-x-6 scale-x-0 opacity-0 !delay-0': isToggleBar }"
+			class="mx-auto mt-2 w-fit origin-left text-nowrap bg-gradient-to-r from-primary-200 to-primary-600 bg-clip-text text-xl font-bold capitalize text-transparent transition-all duration-300"
+		>
+			brayan capetillo
+		</div>
+		<p
+			[ngClass]="{ '-translate-x-6 scale-x-0 opacity-0 !delay-0': isToggleBar }"
+			class="origin-left text-base-color-secundary transition-all duration-300"
+		>
+			brayancapetocccgmail.com
+		</p>
+		<button class="group relative mt-6 flex w-full origin-left cursor-pointer text-nowrap bg-surface-ground py-2 transition-all duration-300">
+			<div class="flex items-center gap-4">
+				<div
+					class="flex h-8 w-8 items-center justify-center rounded shadow-np-input-sm transition-all duration-300 group-hover:shadow-np-input-sm-focus"
+					routerLinkActive="shadow-np-input-sm-focus"
+				>
+					<fa-icon
+						class="rotate-180 text-base-color-secundary transition-all duration-300 group-hover:text-primary-400"
+						routerLinkActive="text-primary-400"
+						[icon]="['fas', 'right-from-bracket']"
+					></fa-icon>
+				</div>
+				<div
+					[ngClass]="{ '-translate-x-6 scale-x-0 opacity-0': isToggleBar }"
+					class="flex origin-left text-nowrap font-semibold text-base-color-secundary transition-all duration-300 group-hover:text-primary-400"
+					routerLinkActive="text-primary-400"
+				>
+					Log out
+				</div>
+			</div>
+		</button>
+	</div>
+</aside>
