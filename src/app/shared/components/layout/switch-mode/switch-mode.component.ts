@@ -1,12 +1,16 @@
 // -Angular Core's imports
-import { Component, Input } from '@angular/core'
+import { Component, inject, Input, OnDestroy } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
+import { Subscription } from 'rxjs'
 
 // -FontAwesome's imports
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
 import { faSun } from '@fortawesome/free-solid-svg-icons'
+
+// -Service's imports
+import { ThemeService } from '@core/services/auth/theme/theme.service'
 
 /**
  * Reusable component to toggle between light and dark themes.
@@ -19,10 +23,15 @@ import { faSun } from '@fortawesome/free-solid-svg-icons'
 	templateUrl: './switch-mode.component.html',
 	styleUrl: './switch-mode.component.scss'
 })
-export class SwitchModeComponent {
+export class SwitchModeComponent implements OnDestroy {
+	//+===================== SERVICES =====================+\\
+	private readonly themeService: ThemeService = inject(ThemeService)
+
 	//+===================== INPUTS =====================+\\
 	@Input() Check!: boolean
 	public darkTheme: boolean = false
+
+	private themeSubscription!: Subscription
 
 	/**
 	 * Create instance of SwitchModeComponent and initializes the FontAwesome icon Library
@@ -32,6 +41,9 @@ export class SwitchModeComponent {
 	 */
 	constructor(library: FaIconLibrary) {
 		library.addIcons(faMoon, faSun)
+		this.themeSubscription = this.themeService.darkTheme.subscribe((state: boolean) => {
+			this.darkTheme = state
+		})
 	}
 
 	/**
@@ -40,7 +52,10 @@ export class SwitchModeComponent {
 	 * @returns {void}
 	 */
 	public switchTheme(): void {
-		const htmlElement: HTMLElement = document.querySelector('body') as HTMLElement
-		this.darkTheme ? htmlElement.classList.add('dark') : htmlElement.classList.remove('dark')
+		this.themeService.darkTheme = this.darkTheme
+	}
+
+	public ngOnDestroy(): void {
+		this.themeSubscription.unsubscribe()
 	}
 }
