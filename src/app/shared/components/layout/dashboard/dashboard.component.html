@@ -1,0 +1,10 @@
+<section class="relative flex">
+	<app-sidebar [routesApp]="sidebarRoute" />
+
+	<main class="w-full">
+		<app-navbar />
+		<section class="relative flex h-dvh overflow-y-auto px-12 py-10">
+			<div class="container mx-auto transition-all duration-300"><router-outlet /></div>
+		</section>
+	</main>
+</section>
