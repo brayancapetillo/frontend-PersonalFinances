@@ -1,0 +1,43 @@
+<nav class="flex h-16 w-full items-center justify-between px-8">
+	<button
+		(click)="toggleBar()"
+		class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded bg-surface-ground shadow-np-input-sm transition-all duration-300 hover:shadow-np-input-sm-focus"
+	>
+		<fa-icon
+			[ngClass]="{ 'text-primary-400': isToggleBar }"
+			class="flex text-lg text-base-color-secundary transition-all duration-300 group-hover:text-primary-400"
+			[icon]="['fas', 'bars-staggered']"
+		></fa-icon>
+	</button>
+	<div class="flex gap-4">
+		<button
+			class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded bg-surface-ground shadow-np-input-sm transition-all duration-300 hover:shadow-np-input-sm-focus"
+		>
+			<app-switch-mode />
+		</button>
+
+		<button
+			class="group relative flex h-10 w-10 cursor-pointer items-center justify-center rounded bg-surface-ground shadow-np-input-sm transition-all duration-300 hover:shadow-np-input-sm-focus"
+		>
+			<fa-icon class="flex text-lg text-primary-400 transition-all duration-300" [icon]="['fas', 'bell']"></fa-icon>
+			<div class="absolute right-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-surface-ground bg-primary-400 transition-all duration-300"></div>
+		</button>
+
+		<div class="flex items-center">
+			<button
+				class="flex h-10 w-10 overflow-hidden rounded-full bg-primary-400 p-0.5 shadow-np-input-sm transition-all duration-300 hover:shadow-np-input-sm-focus"
+			>
+				<img class="w-full rounded-full" src="/assets/images/avatar.png" alt="" />
+			</button>
+			<div class="mx-auto ml-2 flex w-fit items-center bg-gradient-to-r from-primary-200 to-primary-600 bg-clip-text font-bold text-transparent">
+				Brayan Capetillo
+			</div>
+			<button class="group ml-2 flex h-5 w-5 items-center justify-center rounded shadow-np-input-sm hover:shadow-np-input-sm-focus">
+				<fa-icon
+					class="flex text-lg text-base-color-secundary transition-all duration-300 group-hover:text-primary-400"
+					[icon]="['fas', 'caret-down']"
+				></fa-icon>
+			</button>
+		</div>
+	</div>
+</nav>
