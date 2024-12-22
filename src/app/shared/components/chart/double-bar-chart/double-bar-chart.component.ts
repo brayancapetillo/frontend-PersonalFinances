@@ -1,5 +1,5 @@
 // - Angular Imports
-import { Component, ElementRef, inject, ViewChild, OnDestroy, AfterViewInit, OnInit, Input, OnChanges } from '@angular/core'
+import { Component, ElementRef, inject, ViewChild, OnDestroy, AfterViewInit, Input, OnChanges } from '@angular/core'
 import { Subscription } from 'rxjs'
 
 // - Echart's Imports
@@ -51,7 +51,7 @@ import { ThemeService } from '@core/services/auth/theme/theme.service'
 	templateUrl: './double-bar-chart.component.html',
 	styleUrl: './double-bar-chart.component.scss'
 })
-export class DoubleBarChartComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
+export class DoubleBarChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 	//+==================== REFERENCES ====================+\\
 	@ViewChild('containerChart', { static: true }) containerChart!: ElementRef
 	@ViewChild('doubleBarChart', { static: true }) doubleBarChart!: ElementRef
@@ -68,6 +68,7 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit, OnChanges
 
 	//+====================== CHARTS ======================+\\
 	private myChart!: echarts.EChartsType
+	private firstCallResize: boolean = false
 
 	//+====================== GLOBAL ======================+\\
 	private themeSubscription!: Subscription
@@ -83,22 +84,13 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit, OnChanges
 	}
 
 	/**
-	 * Angular lifecycle hook for component initialization.
-	 * Sets up the chart.
-	 * @public
-	 * @returns {void}
-	 */
-	public ngOnInit(): void {
-		this.initializeChart()
-	}
-
-	/**
 	 * Angular lifecycle hook after the view has been initialized.
 	 * Sets up the resize observer for the chart container.
 	 * @public
 	 * @returns {void}
 	 */
 	public ngAfterViewInit(): void {
+		this.initializeChart()
 		this.setupResizeObserver()
 	}
 
@@ -155,7 +147,6 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit, OnChanges
 	private updateChart(): void {
 		if (this.myChart) {
 			this.myChart.setOption(this.optionChart())
-			this.resizeChart()
 		}
 	}
 
@@ -276,9 +267,7 @@ export class DoubleBarChartComponent implements OnInit, AfterViewInit, OnChanges
 	 * @returns {void}
 	 */
 	private resizeChart(): void {
-		if (this.myChart) {
-			this.myChart.resize()
-		}
+		!this.firstCallResize ? (this.firstCallResize = true) : this.myChart?.resize()
 	}
 
 	//&==================== SUSCRIPTION TO THEME SERVICE ====================&\\
