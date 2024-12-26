@@ -24,6 +24,9 @@ export class ThemeService {
 	private readonly themeDarkCookie: boolean = this.cookieService.get(cookies.themeDark) === 'true'
 	private readonly toggleBarCookie: boolean = this.cookieService.get(cookies.toggleBarCookie) === 'true'
 
+	//+================ TRANSITION CLASSES ================+\\
+	private readonly transitionClasses = ['transition-all', 'duration-300']
+
 	//+===================== SUBJECTS =====================+\\
 	private darkTheme$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.themeDarkCookie)
 	private toogleBar$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.toggleBarCookie)
@@ -60,8 +63,32 @@ export class ThemeService {
 	 */
 	public setTheme(isDarkTheme: boolean): void {
 		this.updateCookie(cookies.themeDark, isDarkTheme)
-		const htmlBody: HTMLElement = document.body
+		this.applyThemeClasses(isDarkTheme)
+		this.removeTransitionClasses()
+	}
+
+	/**
+	 * Toggles the dark theme CSS class and adds transition classes to the document body.
+	 * @param {boolean} isDarkTheme - True to enable dark theme, false to disable it.
+	 * @private
+	 * @returns {void}
+	 */
+	private applyThemeClasses(isDarkTheme: boolean): void {
+		const htmlBody = document.body
+		htmlBody.classList.add(...this.transitionClasses)
 		htmlBody.classList.toggle('dark', isDarkTheme)
+	}
+
+	/**
+	 * Removes transition-related CSS classes from the document body.
+	 * @private
+	 * @returns {void}
+	 */
+	private removeTransitionClasses(): void {
+		const htmlBody = document.body
+		setTimeout(() => {
+			htmlBody.classList.remove(...this.transitionClasses)
+		}, 300)
 	}
 
 	//&===================== TOGGLE BAR =====================&\\
