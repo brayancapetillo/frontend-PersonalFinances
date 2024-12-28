@@ -20,7 +20,7 @@ export const myTextColorDark: string = '#ffffff'
 export const myTextColorSecondaryDark: string = '#5d657b'
 
 export const mySurfaceGround: string = '#e3e9f7'
-export const mySurfaceGroundDark: string = '#161616'
+export const mySurfaceGroundDark: string = '#1a1a1a'
 
 export const shadownp =
 	'-0.25rem -0.25rem 0.5rem 0 #f2f6ff, 0.25rem 0.25rem 0.5rem 0 #d1d8eb, 0.25rem 0.25rem 0.5rem 0 transparent inset, -0.125rem -0.125rem 0.25rem 0 transparent inset'
