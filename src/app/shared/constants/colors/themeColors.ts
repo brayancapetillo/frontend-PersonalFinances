@@ -12,6 +12,20 @@ export const themeColors: string[] = [
 	'#261f0e'
 ]
 
+export const themeColorsGrayScale: string[] = [
+	'#f6f7f9',
+	'#f2f6ff',
+	'#d7d9e0',
+	'#b4b9c5',
+	'#8a92a6',
+	'#6c758b',
+	'#5d657b',
+	'#474c5d',
+	'#3d424f',
+	'#363944',
+	'#24252d'
+]
+
 export const myTextColor: string = '#232323'
 export const myTextColorSecondary: string = '#989a9e'
 export const myHighlightTextColor: string = '#eec55b'
