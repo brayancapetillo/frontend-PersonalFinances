@@ -41,3 +41,9 @@ export const shadownp =
 
 export const shadownpDark =
 	'-0.25rem -0.25rem 0.5rem 0 #272727, 0.25rem 0.25rem 0.5rem 0 #0a0a0a, 0.25rem 0.25rem 0.5rem 0 transparent inset, -0.125rem -0.125rem 0.25rem 0 transparent inset'
+
+export const shadowColor: string = '#f2f6ff'
+export const shadowColorDark: string = '#272727'
+
+export const shadowColorInset: string = '#d1d8eb'
+export const shadowColorInsetDark: string = '#0a0a0a'
