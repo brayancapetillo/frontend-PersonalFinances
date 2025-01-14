@@ -56,7 +56,7 @@
 
 	.dark {
 		/* text */
-		--my-text-color: #ffffff;
+		--my-text-color: #e2e8f0;
 		--my-text-color-secondary: #5d657b;
 
 		/* background */
@@ -89,19 +89,19 @@
 	}
 
 	h1 {
-		@apply text-4xl font-semibold text-primary-950;
+		@apply text-4xl font-semibold text-base-color;
 	}
 
 	h2 {
-		@apply text-3xl font-semibold text-primary-950;
+		@apply text-3xl font-semibold text-base-color;
 	}
 
 	h3 {
-		@apply text-2xl font-semibold text-primary-950;
+		@apply text-2xl font-semibold text-base-color;
 	}
 
 	h4 {
-		@apply text-xl font-semibold text-primary-950;
+		@apply text-xl font-semibold text-base-color;
 	}
 
 	::-webkit-scrollbar {
