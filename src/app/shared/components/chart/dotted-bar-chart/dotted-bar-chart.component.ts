@@ -32,15 +32,7 @@ export class DottedBarChartComponent implements AfterViewInit, OnChanges, OnDest
 	@ViewChild('dottedBarChart', { static: true }) dottedBarChart!: ElementRef
 
 	//+====================== INPUT ======================+\\
-	@Input() optionChartDotted: dataDottedChart = {
-		title: '',
-		showLegend: false,
-		data: {
-			labels: [],
-			barSerie: { title: '', data: [] },
-			lineSerie: { title: '', data: [] }
-		}
-	}
+	@Input({ required: true }) optionChartDotted!: dataDottedChart
 
 	//+===================== SERVICES =====================+\\
 	private readonly themeService: ThemeService = inject(ThemeService)
