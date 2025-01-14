@@ -30,7 +30,7 @@ export const myTextColor: string = '#232323'
 export const myTextColorSecondary: string = '#989a9e'
 export const myHighlightTextColor: string = '#eec55b'
 
-export const myTextColorDark: string = '#ffffff'
+export const myTextColorDark: string = '#e2e8f0'
 export const myTextColorSecondaryDark: string = '#5d657b'
 
 export const mySurfaceGround: string = '#e3e9f7'
