@@ -1,0 +1,23 @@
+/* stylelint-disable selector-pseudo-element-no-unknown */
+
+/* PROGRESS BAR */
+.p-progressbar {
+	@apply relative h-3 overflow-hidden rounded-md border-0 bg-surface-section shadow-np-input-sm;
+}
+
+.p-progressbar .p-progressbar-value {
+	@apply m-0 border-0 bg-slate-500;
+}
+
+.p-progressbar-determinate .p-progressbar-label {
+	display: inline-flex;
+}
+
+.p-progressbar .p-progressbar-label {
+	@apply text-base-color-secundary;
+}
+
+/* CUSTOM TABLE */
+.p-datatable > .p-datatable-wrapper {
+	@apply min-h-56;
+}

@@ -1,0 +1,74 @@
+/* input group */
+.p-inputgroup-addon {
+	@apply w-10 rounded-bl-md rounded-tl-md border-b-2 border-l-2 border-t-2 border-surface-border bg-surface-section p-2 text-base-color-secundary;
+}
+
+.p-inputgroup-addon:last-child,
+.p-inputgroup button:last-child,
+.p-inputgroup input:last-child,
+.p-inputgroup > .p-inputwrapper:last-child > .p-component,
+.p-inputgroup > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+	@apply rounded-br-md rounded-tr-md;
+}
+
+/* float label */
+.p-float-label {
+	@apply relative block;
+
+	& > label {
+		@apply left-3 text-base-color-secundary transition-all duration-300;
+	}
+
+	label {
+		@apply pointer-events-none absolute transition-all duration-300;
+	}
+}
+
+/* input text */
+.p-inputtext {
+	@apply m-0 w-full rounded-md border-2 border-surface-border bg-surface-section px-3 py-2 text-base text-base-color-secundary shadow-np-input-sm outline-0 transition-all duration-300;
+
+	&:enabled:hover {
+		@apply shadow-np-input-sm-hover;
+	}
+
+	&:enabled:focus {
+		@apply shadow-np-input-sm-focus;
+	}
+}
+
+/* input password */
+.p-password {
+	@apply w-full;
+}
+
+/* password panel */
+.p-password-panel {
+	@apply top-12 rounded-md border-2 border-surface-border bg-surface-section p-3 text-base-color-secundary shadow-np-input-sm;
+
+	.p-password-strength {
+		@apply rounded-md;
+	}
+
+	.p-password-meter {
+		@apply mb-2 rounded-md bg-surface-border;
+
+		.weak {
+			@apply bg-danger;
+		}
+
+		.medium {
+			@apply bg-warning;
+		}
+
+		.strong {
+			@apply bg-success;
+		}
+	}
+}
+
+/* input icon */
+.p-input-icon-right > .p-icon-wrapper,
+.p-input-icon-right > i:last-of-type {
+	@apply right-3 text-base-color-secundary;
+}

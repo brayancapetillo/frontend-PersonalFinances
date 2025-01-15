@@ -1,0 +1,22 @@
+/* stylelint-disable selector-pseudo-element-no-unknown */
+
+/* TAG */
+.p-tag {
+	@apply inline-flex items-center justify-center rounded bg-surface-section px-2 py-0.5 text-xs text-primary-400 shadow-np-input-sm transition-all duration-300 hover:shadow-np-input-sm-hover;
+}
+
+.p-tag.p-tag-success {
+	@apply text-success;
+}
+
+.p-tag.p-tag-warning {
+	@apply text-warning;
+}
+
+.p-tag.p-tag-danger {
+	@apply text-danger;
+}
+
+.p-tag.p-tag-info {
+	@apply text-info;
+}
