@@ -1,5 +1,6 @@
-import { Account } from '../account/account'
-import { category } from '../category/category'
+// -Model's Imports
+import { Account } from '@shared/models/account/account'
+import { category } from '@shared/models/category/category'
 
 export interface transaction {
 	readonly id: number
