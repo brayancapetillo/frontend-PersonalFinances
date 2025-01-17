@@ -1,3 +1,4 @@
+// -type's Imports
 import { tBank } from '@shared/types/global/bank/bank'
 
 export interface Bank {
