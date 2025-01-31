@@ -28,7 +28,7 @@ import { ThemeService } from '@core/services/auth/theme/theme.service'
 export class GaugeChartComponent implements AfterViewInit, OnChanges, OnDestroy {
 	//+==================== REFERENCES ====================+\\
 	@ViewChild('containerChart', { static: true }) containerChart!: ElementRef
-	@ViewChild('gaugeChart', { static: true }) doubleBarChart!: ElementRef
+	@ViewChild('gaugeChart', { static: true }) gaugeChart!: ElementRef
 
 	//+====================== INPUT ======================+\\
 	@Input({ required: true }) dataGaugeChart!: dataGauge
@@ -97,7 +97,7 @@ export class GaugeChartComponent implements AfterViewInit, OnChanges, OnDestroy 
 	 */
 	private initializeChart(): void {
 		echarts.use([GaugeChart, CanvasRenderer])
-		this.myChart = echarts.init(this.doubleBarChart.nativeElement)
+		this.myChart = echarts.init(this.gaugeChart.nativeElement)
 		this.updateChart()
 	}
 
