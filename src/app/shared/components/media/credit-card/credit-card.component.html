@@ -1,0 +1,25 @@
+<div
+	class="flex h-48 min-h-48 flex-col justify-between rounded-lg bg-gradient-to-br from-slate-200 to-slate-400 p-4 transition-all duration-300 dark:from-zinc-800 dark:to-zinc-900"
+>
+	<div
+		class="flex items-center"
+		[ngClass]="{
+			'justify-start': dataAccountCard && dataAccountCard.AccountDetails.directionLeft,
+			'justify-end': dataAccountCard && !dataAccountCard.AccountDetails.directionLeft
+		}"
+	>
+		<img class="w-[4.5rem]" [src]="getImageBank()" alt="" srcset="" />
+	</div>
+	<div class="-mt-10 flex flex-col">
+		@if (dataAccountCard && dataAccountCard.AccountDetails.cardIssuer !== 3) {
+			<img class="w-9 rounded-sm" src="/assets/images/creditCard/chip2.png" alt="" />
+		}
+	</div>
+	<div class="relative flex items-center justify-between">
+		<div class="absolute bottom-0 flex flex-col">
+			<div class="text-xs uppercase text-slate-50 dark:text-slate-200">{{ dataAccountCard.accountType?.name }}</div>
+			<div class="-mt-2 w-full text-base uppercase text-white dark:text-slate-200">{{ dataAccountCard.name }}</div>
+		</div>
+		<img class="absolute bottom-0 right-0 w-[4.5rem]" [src]="getImageCardIssuer()" alt="" />
+	</div>
+</div>
