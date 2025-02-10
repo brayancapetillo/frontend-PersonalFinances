@@ -4,9 +4,8 @@ import { Subscription } from 'rxjs'
 
 // - Echart's Imports
 import { CalendarComponent, GridComponent, TitleComponent, TooltipComponent, VisualMapComponent } from 'echarts/components'
-import { CalendarComponentOption, EChartsCoreOption, TooltipComponentOption, VisualMapComponentOption } from 'echarts'
-import { CallbackDataParams, TopLevelFormatterParams } from 'echarts/types/dist/shared'
-import { HeatmapSeriesOption } from 'echarts/lib/echarts'
+import { CalendarComponentOption, EChartsCoreOption, HeatmapSeriesOption, TooltipComponentOption, VisualMapComponentOption } from 'echarts'
+import { CallbackDataParams } from 'echarts/types/dist/shared'
 import { CanvasRenderer } from 'echarts/renderers'
 import { HeatmapChart } from 'echarts/charts'
 import * as echarts from 'echarts/core'
@@ -19,6 +18,7 @@ import { dataHeatMapChart } from '@shared/interfaces/components/charts/dataHeatM
 
 // - Service's Imports
 import { ThemeService } from '@core/services/auth/theme/theme.service'
+import { DateFormatPipe } from '@shared/pipes/dates/date-format.pipe'
 
 /**
  * Component for displaying a heatmap chart using ECharts.
@@ -46,6 +46,9 @@ export class HeatMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
 	//+===================== SERVICES =====================+\\
 	private readonly themeService: ThemeService = inject(ThemeService)
+
+	//+====================== PIPES =======================+\\
+	private readonly pipeDateFormat: DateFormatPipe = inject(DateFormatPipe)
 
 	//+====================== CHARTS ======================+\\
 	private myChart!: echarts.EChartsType
@@ -157,15 +160,19 @@ export class HeatMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 	private getTooltipConfig(textColorSecundary: string, backgroundColor: string): TooltipComponentOption {
 		return {
 			trigger: 'item',
-			formatter: (params: TopLevelFormatterParams): string => {
-				const data = (params as CallbackDataParams[])[0].data as [string, string]
-				const date = data[0]
-				const value = data[1]
-				const color = (params as CallbackDataParams[])[0].color
+			formatter: (params: CallbackDataParams | CallbackDataParams[]): string => {
+				const dataParams: CallbackDataParams = params as CallbackDataParams
+
+				if (!Array.isArray(dataParams.data)) return ''
+				const date: string = dataParams.data[0] as string
+				const value = dataParams.data[1]
+				const color = dataParams.color
+
+				const formatDate = this.pipeDateFormat.transform(date)
 
 				return `
 					<div class="flex flex-col rounded-md border-0">
-						<div class="font-semibold text-base-color dark:text-base-color-secundary">${date}</div>
+						<div class="font-semibold text-base-color dark:text-base-color-secundary">${formatDate}</div>
 						<div class="mt-1 flex gap-2 items-center">
 							<div class="h-4 w-4 rounded shadow-np-input-sm" style="background-color: ${color};"></div>
 							<div class="text-base-color-secundary">${value}</div>
