@@ -123,7 +123,7 @@ export class SimpleGaugeChartComponent implements AfterViewInit, OnChanges, OnDe
 	 */
 	private optionChart(): EChartsCoreOption {
 		return {
-			series: [this.serieMiddleCircle(), this.serieProgressGauge()]
+			series: [this.shadow(), this.shadowInset(), this.serieProgressGauge()]
 		}
 	}
 
@@ -133,7 +133,7 @@ export class SimpleGaugeChartComponent implements AfterViewInit, OnChanges, OnDe
 	 * @private
 	 * @returns {SeriesOption} Series option for the middle circle.
 	 */
-	private serieMiddleCircle(): SeriesOption {
+	private shadow(): SeriesOption {
 		return {
 			type: 'gauge',
 			startAngle: 0,
@@ -168,6 +168,66 @@ export class SimpleGaugeChartComponent implements AfterViewInit, OnChanges, OnDe
 	}
 
 	/**
+	 * Returns configuration for the gauge title.
+	 *
+	 * @private
+	 * @returns {SeriesOption} Series option for the title gauge.
+	 */
+	private shadowInset(): SeriesOption {
+		return {
+			type: 'gauge',
+			startAngle: -40,
+			endAngle: 320,
+			radius: '85%',
+			name: 'Perfect',
+			title: {
+				color: this.darkTheme ? themeColors.myTextColorSecondaryDark : themeColors.myTextColorSecondaryDark,
+				fontSize: 18,
+				offsetCenter: ['0%', '-15%'],
+				fontWeight: 'bold'
+			},
+			max: this.dataSimpleGauge.maxvalue,
+			progress: {
+				show: true,
+				roundCap: true,
+				width: 16
+			},
+			pointer: {
+				show: false
+			},
+			axisLine: {
+				roundCap: true,
+				lineStyle: {
+					width: 16,
+					color: [[1, this.darkTheme ? themeColors.mySurfaceGroundDark : themeColors.mySurfaceGround]],
+					shadowColor: this.darkTheme ? themeColors.shadowColorDark : themeColors.shadowColor,
+					shadowBlur: 16,
+					shadowOffsetX: -10,
+					shadowOffsetY: -10
+				}
+			},
+			axisTick: {
+				show: false
+			},
+			splitLine: {
+				show: false
+			},
+			axisLabel: {
+				show: false
+			},
+			detail: {
+				show: true,
+				valueAnimation: true,
+				offsetCenter: ['0%', '16%'],
+				formatter: '${value}',
+				fontSize: 20,
+				fontWeight: 'normal',
+				color: this.darkTheme ? themeColors.mySurfaceGroundDark : themeColors.mySurfaceGround
+			}
+		}
+	}
+
+	/**
 	 * Returns configuration for the progress gauge.
 	 *
 	 * @private
@@ -196,7 +256,7 @@ export class SimpleGaugeChartComponent implements AfterViewInit, OnChanges, OnDe
 				roundCap: true,
 				lineStyle: {
 					width: 22,
-					color: [[1, this.darkTheme ? '#161616' : '#e0e7f7']],
+					color: [[1, this.darkTheme ? themeColors.mySurfaceGroundDark : themeColors.mySurfaceGround]],
 					shadowColor: this.darkTheme ? themeColors.shadowColorInsetDark : themeColors.shadowColorInset,
 					shadowBlur: 16,
 					shadowOffsetX: 10,
