@@ -7,7 +7,15 @@ import { routes } from './app.routes'
 import { NgxParticlesModule } from '@tsparticles/angular'
 import { provideHttpClient, withInterceptors } from '@angular/common/http'
 import { httpInterceptor } from './core/interceptors/http/http.interceptor'
+import { DateFormatPipe } from '@shared/pipes/dates/date-format.pipe'
 
 export const appConfig: ApplicationConfig = {
-	providers: [provideRouter(routes), provideAnimations(), NgxParticlesModule, MessageService, provideHttpClient(withInterceptors([httpInterceptor]))]
+	providers: [
+		provideRouter(routes),
+		provideAnimations(),
+		NgxParticlesModule,
+		MessageService,
+		provideHttpClient(withInterceptors([httpInterceptor])),
+		DateFormatPipe
+	]
 }
