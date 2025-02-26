@@ -6,7 +6,7 @@
 }
 
 .p-progressbar .p-progressbar-value {
-	@apply m-0 border-0 bg-slate-500;
+	@apply m-0 border-0 bg-slate-500 rounded-full;
 }
 
 .p-progressbar-determinate .p-progressbar-label {
