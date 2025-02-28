@@ -1,0 +1,35 @@
+.p-dropdown {
+	@apply w-full rounded-md border-2 border-surface-border bg-surface-section text-base-color-secundary shadow-np-input-sm outline-0 transition-all duration-300 hover:shadow-np-input-sm-hover;
+}
+
+.p-dropdown .p-inputtext {
+	@apply rounded-br-none rounded-tr-none border-none bg-transparent shadow-none;
+}
+
+.p-dropdown .p-dropdown-trigger {
+	@apply grid w-10 place-items-center;
+}
+
+.p-dropdown-panel {
+	@apply rounded-md border-2 border-surface-border bg-surface-section shadow-np-input-sm;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+	@apply px-1 py-1;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+	@apply mx-0 my-0.5 rounded-md px-2 py-1 text-base-color-secundary transition-all duration-300;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight, .p-disabled).p-focus {
+	@apply text-base-color;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight, .p-disabled):hover {
+	@apply text-highlight-color shadow-np-input-sm;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+	@apply text-highlight-color;
+}
