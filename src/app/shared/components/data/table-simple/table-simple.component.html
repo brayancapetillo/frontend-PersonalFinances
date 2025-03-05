@@ -1,0 +1,58 @@
+<div class="flex w-full">
+	<p-table [columns]="columns" [value]="dataTable" class="w-full">
+		<ng-template pTemplate="header" let-columns>
+			<tr>
+				@for (col of columns; track $index) {
+					<th [ngStyle]="{ 'min-width': col.width + 'rem' }">
+						{{ col.header }}
+					</th>
+				}
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="body" let-rowData let-columns="columns">
+			<tr>
+				@for (col of columns; track $index) {
+					@if (rowData[col.field].typeRow === typeRow.STRING) {
+						<td>
+							{{ rowData[col.field].value }}
+						</td>
+					}
+					@if (rowData[col.field].typeRow === typeRow.DATE) {
+						<td>
+							{{ rowData[col.field].value | dateFormat }}
+						</td>
+					}
+					@if (rowData[col.field].typeRow === typeRow.NUMBER) {
+						<td>
+							{{ rowData[col.field].value }}
+						</td>
+					}
+					@if (rowData[col.field].typeRow === typeRow.BALANCE) {
+						<td>
+							{{ rowData[col.field].value }}
+						</td>
+					}
+					@if (rowData[col.field].typeRow === typeRow.STATUS) {
+						<td>
+							<p-tag
+								[value]="getValueStatus(rowData[col.field].value, rowData[col.field].tagValue)"
+								[severity]="getSeverity(rowData[col.field].value, rowData[col.field].tagValue)"
+							/>
+						</td>
+					}
+					@if (rowData[col.field].typeRow === typeRow.ACTIVITY) {
+						<td>
+							{{ rowData[col.field].value }}
+						</td>
+					}
+
+					@if (rowData[col.field].typeRow === typeRow.BOOLEAN) {
+						<td>
+							{{ rowData[col.field].value }}
+						</td>
+					}
+				}
+			</tr>
+		</ng-template>
+	</p-table>
+</div>

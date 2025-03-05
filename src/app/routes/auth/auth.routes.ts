@@ -3,7 +3,7 @@ import { Routes } from '@angular/router'
 
 // - component's Imports
 import { VerifyEmailComponent } from '@content/components/pages/auth/verify-email/verify-email.component'
-import { LoginComponent } from '@content/auth/login/login.component'
+import { LoginComponent } from '@content/components/pages/auth/login/login.component'
 
 export default [
 	{ path: 'login', component: LoginComponent },

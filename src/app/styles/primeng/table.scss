@@ -1,0 +1,76 @@
+/* stylelint-disable selector-pseudo-element-no-unknown */
+.p-datatable {
+	@apply relative grid w-full;
+}
+
+.p-datatable .p-datatable-header {
+	@apply p-3 text-base-color-secundary;
+}
+
+.p-datatable > .p-datatable-wrapper {
+	@apply overflow-auto;
+}
+
+.p-datatable-table {
+	@apply w-full border-spacing-0;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+	@apply py-1 px-3 text-left text-slate-700 transition duration-300 hover:text-base-color dark:text-slate-200 text-nowrap;
+}
+
+.p-datatable .p-column-header-content {
+	@apply flex items-center;
+}
+
+.p-datatable .p-sortable-column .p-column-title,
+.p-datatable .p-sortable-column .p-sortable-column-icon,
+.p-datatable .p-sortable-column .p-sortable-column-badge {
+	@apply align-middle;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+	@apply ml-2;
+}
+
+.p-column-filter-menu {
+	@apply ml-auto inline-flex;
+}
+
+.p-datatable .p-sortable-column.p-highlight {
+	@apply text-base-color;
+}
+
+.p-column-filter-menu-button {
+	@apply h-8 w-8 rounded-md border-none bg-transparent text-base-color-secundary transition duration-300 dark:text-white/80;
+}
+
+.p-column-filter-menu-button,
+.p-column-filter-clear-button {
+	@apply relative inline-flex cursor-pointer items-center justify-center overflow-hidden hover:bg-gray-500/10 hover:text-base-color-secundary dark:hover:text-white;
+}
+
+.p-column-filter-menu-button.p-column-filter-menu-button-active,
+.p-column-filter-menu-button.p-column-filter-menu-button-active:hover {
+	@apply text-base-color;
+
+	background: color-mix(in srgb, var(--color-primary-400), transparent 85%);
+}
+
+.p-datatable .p-datatable-tbody > tr {
+	@apply text-base-color-secundary transition duration-300 hover:text-slate-700 dark:hover:text-primary-400;
+}
+
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+	@apply text-base-color dark:text-white/80;
+
+	background: color-mix(in srgb, var(--color-primary-400), transparent 90%);
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+	@apply border-0 py-2 px-3 text-left;
+}
+
+:is(.dark .p-datatable .p-datatable-thead > tr > th.p-highlight) {
+	@apply text-base-color;
+}

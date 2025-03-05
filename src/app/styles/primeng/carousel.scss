@@ -1,0 +1,12 @@
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-pseudo-element-no-unknown */
+
+/* CAROUSEL */
+.p-carousel-next,
+.p-carousel-prev {
+	display: none !important;
+}
+
+.p-carousel-content {
+	@apply rounded-lg shadow-np-input-sm-focus;
+}

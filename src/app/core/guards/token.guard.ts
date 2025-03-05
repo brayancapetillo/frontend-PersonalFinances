@@ -9,6 +9,7 @@ export const tokenGuard: CanActivateFn = () => {
 	const token: string = cookieService.get('token')
 
 	if (!token) {
+		// TODO: Implement verification token with API
 		router.navigate(['auth/login'])
 		return false
 	}

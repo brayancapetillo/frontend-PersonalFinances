@@ -4,12 +4,8 @@
 /* stylelint-disable scss/at-rule-no-unknown */
 
 /* You can add global styles to this file, and also import other style files */
-@import './app/styles/angular/transition';
-@import './app/styles/angular/validation';
-@import './app/styles/primeng/toast';
-@import './app/styles/button';
-@import './app/styles/input';
 @import '@fontsource/source-sans-pro';
+@import './app/styles/index';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,27 +32,27 @@
 	--color-help: #9243f4;
 
 	/* text */
-	--my-text-color: #232323;
+	--my-text-color: #334155;
 	--my-text-color-secondary: #989a9e;
 	--my-highlight-text-color: var(--color-primary-400);
 
 	/* background */
-	--my-surface-ground: #f0f0f2;
-	--my-surface-section: #f0f0f2;
-	--my-surface-card: #f0f0f2;
-	--my-surface-overlay: #f0f0f2;
-	--my-surface-border: #e8eaf0;
-	--my-surface-hover: #f0f0f2;
+	--my-surface-ground: #e3e9f7;
+	--my-surface-section: #e3e9f7;
+	--my-surface-card: #e3e9f7;
+	--my-surface-overlay: #e3e9f7;
+	--my-surface-border: #dfe6f8;
+	--my-surface-hover: #e3e9f7;
 	--my-maskbg: #00000066;
-	--my-highlight-bg: #f0f0f2;
+	--my-highlight-bg: #e3e9f7;
 
 	/* shadows */
-	--shadow-color: #ffffff;
-	--shadow-color-inset: #aeaec066;
+	--shadow-color: #f2f6ff;
+	--shadow-color-inset: #d1d8eb;
 
 	.dark {
 		/* text */
-		--my-text-color: #ffffff;
+		--my-text-color: #e2e8f0;
 		--my-text-color-secondary: #5d657b;
 
 		/* background */
@@ -89,15 +85,23 @@
 	}
 
 	h1 {
-		@apply text-4xl font-semibold text-primary-950;
+		@apply text-4xl font-semibold text-base-color;
 	}
 
 	h2 {
-		@apply text-3xl font-semibold text-primary-950;
+		@apply text-3xl font-semibold text-base-color;
 	}
 
 	h3 {
-		@apply text-2xl font-semibold text-primary-950;
+		@apply text-2xl font-semibold text-base-color;
+	}
+
+	h4 {
+		@apply text-xl font-semibold text-base-color;
+	}
+
+	h5 {
+		@apply text-base font-semibold text-base-color;
 	}
 
 	::-webkit-scrollbar {

@@ -1,0 +1,83 @@
+p-calendar {
+	@apply w-full;
+}
+
+.p-calendar {
+	@apply w-full;
+
+	.p-inputtext {
+		@apply w-full;
+	}
+}
+
+.p-datepicker {
+	@apply rounded-md border-2 border-surface-border bg-surface-section p-2 text-base-color-secundary shadow-np-input-sm;
+}
+
+.p-datepicker:not(.p-datepicker-inline) {
+	@apply border-2 bg-surface-section shadow-np-input-sm;
+}
+
+.p-datepicker .p-datepicker-header {
+	@apply border-b-2 border-surface-border bg-surface-section pb-1 font-semibold text-base-color;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-header .p-datepicker-next {
+	@apply h-7 w-7 rounded-md border-none bg-transparent text-base-color-secundary transition-all duration-300;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-next:enabled:hover {
+	@apply shadow-np-input-sm;
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month {
+	@apply rounded-md p-1 transition-all duration-300;
+}
+
+.p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled, .p-highlight):hover {
+	@apply text-highlight-color shadow-np-input-sm;
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month.p-highlight {
+	@apply text-highlight-color;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+	@apply p-1;
+}
+
+.p-datepicker table {
+	@apply w-full;
+}
+
+.p-datepicker table th {
+	@apply p-1 font-semibold text-base-color;
+}
+
+.p-datepicker table td {
+	@apply p-1;
+}
+
+.p-datepicker table td > span {
+	@apply h-8 w-8 rounded-full transition-all duration-300;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+	@apply text-primary-500;
+}
+
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight, .p-disabled):hover {
+	@apply text-highlight-color shadow-np-input-sm;
+}
+
+.p-datepicker table td > span.p-highlight {
+	@apply text-highlight-color shadow-np-input-sm;
+}
+
+.p-disabled,
+.p-disabled * {
+	@apply text-slate-300 dark:text-slate-700;
+}

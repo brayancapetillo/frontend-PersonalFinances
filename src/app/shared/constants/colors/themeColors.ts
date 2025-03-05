@@ -1,0 +1,49 @@
+export const themeColors: string[] = [
+	'#fefaec',
+	'#faf2cb',
+	'#f7e38a',
+	'#f1d46c',
+	'#eec55b',
+	'#be9b49',
+	'#a28240',
+	'#896e36',
+	'#66502d',
+	'#58442b',
+	'#261f0e'
+]
+
+export const themeColorsGrayScale: string[] = [
+	'#f6f7f9',
+	'#f2f6ff',
+	'#d7d9e0',
+	'#b4b9c5',
+	'#8a92a6',
+	'#6c758b',
+	'#5d657b',
+	'#474c5d',
+	'#3d424f',
+	'#363944',
+	'#24252d'
+]
+
+export const myTextColor: string = '#232323'
+export const myTextColorSecondary: string = '#989a9e'
+export const myHighlightTextColor: string = '#eec55b'
+
+export const myTextColorDark: string = '#e2e8f0'
+export const myTextColorSecondaryDark: string = '#5d657b'
+
+export const mySurfaceGround: string = '#e3e9f7'
+export const mySurfaceGroundDark: string = '#1a1a1a'
+
+export const shadownp =
+	'-0.25rem -0.25rem 0.5rem 0 #f2f6ff, 0.25rem 0.25rem 0.5rem 0 #d1d8eb, 0.25rem 0.25rem 0.5rem 0 transparent inset, -0.125rem -0.125rem 0.25rem 0 transparent inset'
+
+export const shadownpDark =
+	'-0.25rem -0.25rem 0.5rem 0 #272727, 0.25rem 0.25rem 0.5rem 0 #0a0a0a, 0.25rem 0.25rem 0.5rem 0 transparent inset, -0.125rem -0.125rem 0.25rem 0 transparent inset'
+
+export const shadowColor: string = '#f2f6ff'
+export const shadowColorDark: string = '#272727'
+
+export const shadowColorInset: string = '#d1d8eb'
+export const shadowColorInsetDark: string = '#0a0a0a'

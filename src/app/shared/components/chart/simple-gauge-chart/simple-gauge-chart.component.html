@@ -1,0 +1,10 @@
+<div #containerChart class="group relative h-full w-full">
+	<div #SimpleGaugeChart class="ml-[1%] flex h-full min-h-44 w-[98%] items-center justify-center"></div>
+	<div class="absolute bottom-1 left-1 right-1 top-1 flex items-center justify-center text-2xl">
+		<fa-icon
+			class="flex text-base-color-secundary transition-all duration-300"
+			[style.color]="dataSimpleGauge.color"
+			[icon]="dataSimpleGauge.icon"
+		></fa-icon>
+	</div>
+</div>

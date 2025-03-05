@@ -1,3 +1,4 @@
+// -type's Imports
 import { ilustrationName } from '@shared/types/assets/images/ilustation'
 
 export interface IinformationCard {
