@@ -41,7 +41,7 @@
 	--my-surface-section: #e3e9f7;
 	--my-surface-card: #e3e9f7;
 	--my-surface-overlay: #e3e9f7;
-	--my-surface-border: #e8eaf0;
+	--my-surface-border: #dfe6f8;
 	--my-surface-hover: #e3e9f7;
 	--my-maskbg: #00000066;
 	--my-highlight-bg: #e3e9f7;
@@ -98,6 +98,10 @@
 
 	h4 {
 		@apply text-xl font-semibold text-base-color;
+	}
+
+	h5 {
+		@apply text-base font-semibold text-base-color;
 	}
 
 	::-webkit-scrollbar {
