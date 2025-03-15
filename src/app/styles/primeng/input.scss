@@ -72,3 +72,9 @@
 .p-input-icon-right > i:last-of-type {
 	@apply right-3 text-base-color-secundary;
 }
+
+/* input number */
+p-inputnumber,
+.p-inputnumber {
+	@apply w-full;
+}
