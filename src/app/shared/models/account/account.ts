@@ -10,6 +10,10 @@ export interface Account {
 	idAccountType: number
 	balance: number
 	accountNumber: string
+	creditUsed?: number
+	creditLimit?: number
+	cutOffDate?: Date
+	paymentDueDate?: Date
 	createdAt: Date
 	updatedAt: Date
 	bank?: Bank
