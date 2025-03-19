@@ -1,13 +1,11 @@
 <div class="flex">
-	<div class="flex w-full">
-		<div
-			class="grid w-10 min-w-10 place-items-center rounded-bl-md rounded-tl-md border-b-2 border-l-2 border-t-2 border-surface-border bg-surface-section text-base-color-secundary shadow-np-input-sm transition-all duration-300"
-			[ngClass]="{ 'text-danger': control.invalid && control.touched }"
-		>
-			<fa-icon [icon]="icon"></fa-icon>
-		</div>
-		<div class="flex w-full">
-			<p-inputNumber [formControl]="control" [placeholder]="placeHolder" mode="currency" currency="USD" locale="en-US" />
-		</div>
+	<div
+		class="flex w-10 items-center justify-center rounded-bl-md rounded-tl-md border-b-2 border-l-2 border-t-2 border-surface-border bg-surface-section text-base-color-secundary shadow-np-input-sm transition-all duration-300"
+		[ngClass]="{ 'text-danger': control.invalid && control.touched }"
+	>
+		<fa-icon [icon]="icon"></fa-icon>
+	</div>
+	<div class="w-[calc(100%-2.5rem)]">
+		<p-inputNumber [formControl]="control" [placeholder]="placeHolder" mode="currency" currency="USD" locale="en-US" />
 	</div>
 </div>
